@@ -1,0 +1,54 @@
+<div id="app">
+  <header>
+    <div id="title">
+      <h1>JSON to Elixir
+        <span class="version">
+          <%= @elixir_version %>
+        </span>
+      </h1>
+      <div id="description">
+        Convert JSON into Elixir code in your browser using Poison.
+      </div>
+    </div>
+
+    <div id="toolbox">
+      <div id="options">
+        <button type="button" id="options-button" class="button-link">
+          Options
+        </button>
+        <div id="options-window">
+          <form>
+            <h3>Options</h3>
+            <ul class="options-list">
+            </ul>
+          </form>
+          <footer>
+            <small>
+              <a href="https://hexdocs.pm/poison/" target="_blank">
+                Poison Documentation
+              </a>
+            </small>
+          </footer>
+        </div>
+      </div>
+      <button type="button" id="copy-button" class="button-link">
+        Copy 
+      </button>
+    </div>
+  </header>
+  <div id="editors">
+    <div id="input" class="code-input"></div>
+    <div id="output" class="code-input"></div>
+  </div>
+  <footer>
+    <div>
+      <ul class="flat-list">
+        <li><a href="https://github.com/slab/json-to-elixir" target="_blank">Source</a></li>
+        <li><a href="https://github.com/slab/json-to-elixir/issues/new" target="_blank">Report Issues</a></li>
+      </ul>
+    </div>
+    <div>
+      Made with 💜 by <a href="https://slab.com" target="_blank">Slab</a>
+    </div>
+  </footer>
+</div>

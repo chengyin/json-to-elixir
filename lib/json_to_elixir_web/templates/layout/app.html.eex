@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JSON to Elixir</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Use Elixir 1.6 formatter right in your browser.">
+    <meta name="theme-color" content="#f8f3ff">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JSON to Elixir">
+    <meta property="og:description" content="Format Elixir code in your browser">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= static_url(@conn, "/images/logo-256.png") %>">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JSON to Elixir.">
+    <meta name="twitter:description" content="Format Elixir code in your browser">
+    <meta name="twitter:image" content="<%= static_url(@conn, "/images/logo-256.png") %>" />
+
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#4e2a8e">
+
+    <% ga_id = Application.get_env(:json_to_elixir, :ga)[:id] %>
+    <%= if ga_id do %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga_id %>"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '<%= ga_id %>');
+    </script>
+    <% end %>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <span class="logo"></span>
+      </header>
+
+      <div class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></div>
+      <div class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></div>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
