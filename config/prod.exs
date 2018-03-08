@@ -16,7 +16,8 @@ use Mix.Config
 config :json_to_elixir, JSONToElixirWeb.Endpoint,
   load_from_system_env: true,
   url: [scheme: "https", host: "JSONToElixir.com", port: 443],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  check_origin: ["https://json-to-elixir.render.to"]
 
 # Do not print debug messages in production
 config :logger, level: :info
